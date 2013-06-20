@@ -1,5 +1,5 @@
 ' Hide the Microsoft Access "Ribbon" toolbar.
-' Also removes access to "Print Preview" ribbon, so make sure all printing needs are accomodated within the database itself.
+' Also removes access to "Print Preview" ribbon, so make sure all printing needs are accommodated within the database itself.
 
 Private Sub btnHideRibbon_Click()
 DoCmd.ShowToolbar "Ribbon", acToolbarNo
