@@ -52,13 +52,14 @@ strFullPath = Mid(DBEngine.Workspaces(0).Databases(0).TableDefs("tblLinked").Con
 
 ' reconstruct the source and destination file paths
 ' destination file to include the abbreviated day of the week
-' \backup directory must already exist
+' \backup\ directory must already exist
+' if working with <=2003 version databases, change 2 instances of ".accdb" below to ".mdb" 
 
     strSourceFile = strPath & strBackendFile & ".accdb"
     strDestinationFile = strPath & "backup\" & strBackendFile & "-" & WeekdayName(Weekday(Date), True) & ".accdb"
 
 FileCopy strSourceFile, strDestinationFile
-MsgBox "The back-end database has been backed up!"
+MsgBox "The back-end database has been backed up.", vbOKOnly, "Success"
 
 Exit_Backup:
 Exit Sub
@@ -70,7 +71,7 @@ If Err.Number = 0 Then
     ElseIf Err.Number = 53 Then
         MsgBox "The Source File '" & strSourceFile & "' could not be found. Please validate the location and name of the specifed Source File and try again", vbOKOnly, "File Not Found"
     Else
-        MsgBox "MS Access has generated the following error" & vbCrLf & vbCrLf & "Error Number: " & Err.Number & vbCrLf & "Error Source: ModExtFiles / CopyFile" & vbCrLf & "Error Description: " & Err.Description, vbCritical, "An Error has Occured!"
+        MsgBox "Microsoft Access has generated the following error" & vbCrLf & vbCrLf & "Error Number: " & Err.Number & vbCrLf & "Error Source: ModExtFiles / CopyFile" & vbCrLf & "Error Description: " & Err.Description, vbCritical, "An Error has Occured"
 End If
 
 Resume Exit_Backup
