@@ -23,7 +23,7 @@ Dim strDestinationFile As String
 strFullPath = Mid(DBEngine.Workspaces(0).Databases(0).TableDefs("tblLinked").Connect, 01)
 
 ' uncomment next line in order to check path string in order to fine-tune the number of characters to 
-' truncate form the begining (by changing #01 above) in order to arrive at just the file path.
+' truncate from the begining (by changing #01 above) in order to arrive at just the file path.
 
 'MsgBox (strFullPath)
 
