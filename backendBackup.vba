@@ -1,8 +1,8 @@
 ' Create a backup of a back-end database from the front-end.
 ' Script can be run from a button or other triggering event.
-' It will determine the name and current path of the back-end file, and
-' copy a weekly file into a "backup" subfolder. 
+' It will determine the name and current path of the back-end file, and copy a weekly file into a "backup" subfolder. 
 ' Backups tagged with the day of the week, and will overwrite old backups after 7 days.
+' There are two places that need to be customized to your database. See the next block of comments for details.
 ' Script will fail gracefully if the back-end is locked. Make sure all tables/forms/queries are closed before running.
 
 
